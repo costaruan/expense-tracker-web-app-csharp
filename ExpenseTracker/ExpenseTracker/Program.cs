@@ -12,6 +12,10 @@ builder.Services.AddDbContext<ExpenseTrackerDbContext>(options =>
 
 var app = builder.Build();
 
+//Register Syncfusion license
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
+    "Ngo9BigBOggjHTQxAR8/V1NMaF1cXmhLYVRpR2Nbek5yflRDal5TVBYiSV9jS3tTd0ZiWHtfdXZXQ2ZeWQ==");
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
