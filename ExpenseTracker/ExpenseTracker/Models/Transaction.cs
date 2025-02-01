@@ -9,7 +9,7 @@ public class Transaction
 
     public int CategoryId { get; set; }
 
-    public Category Category { get; set; } = new Category();
+    public Category Category { get; set; } = new();
 
     public int Amount { get; set; }
 
