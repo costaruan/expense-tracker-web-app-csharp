@@ -1,5 +1,6 @@
 using ExpenseTracker.Data;
 using Microsoft.EntityFrameworkCore;
+using Syncfusion.Licensing;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ builder.Services.AddDbContext<ExpenseTrackerDbContext>(options =>
 var app = builder.Build();
 
 //Register Syncfusion license
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
+SyncfusionLicenseProvider.RegisterLicense(
     "Ngo9BigBOggjHTQxAR8/V1NMaF1cXmhLYVRpR2Nbek5yflRDal5TVBYiSV9jS3tTd0ZiWHtfdXZXQ2ZeWQ==");
 
 // Configure the HTTP request pipeline.
@@ -32,7 +33,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "default",
+    "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
