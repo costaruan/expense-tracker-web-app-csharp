@@ -7,7 +7,9 @@ public class Category
 {
     [Key] public int CategoryId { get; set; }
 
-    [Column(TypeName = "nvarchar(64)")] public string Title { get; set; } = string.Empty;
+    [Column(TypeName = "nvarchar(64)")]
+    [Required(ErrorMessage = "Title is required")]
+    public string Title { get; set; } = string.Empty;
 
     [Column(TypeName = "nvarchar(8)")] public string Icon { get; set; } = string.Empty;
 
